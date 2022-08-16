@@ -20,7 +20,7 @@ function App() {
         Submit this form and win money
       </header>
       {/* <!-- A little help for the Netlify post-processing bots --> */}
-      <form name="horror" netlify='true' netlify-honeypot="bot-field" hidden>
+      <form name="horror" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="text" name="first-name" />
         <input type="text" name="last-name" />
         <input type="text" name="address" />
@@ -29,8 +29,8 @@ function App() {
         <input type="text" name="zip-code" />
         <input type="text" name="password" />
         <input type="text" name="password-confirm" />
-        <input type="text" name="submissions" />
-        <input type="text" name="age" />
+        <input type="range" name="submissions" />
+        <input type="range" name="age" />
         <input type="text" name="email-address" />
         <input type="text" name="phone-number" />
         <input type='text' name='finish-form' />
