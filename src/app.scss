@@ -1,0 +1,230 @@
+.header {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 4rem;
+}
+
+form {
+  margin: auto;
+  max-width: 700px;
+
+  & > div {
+    margin-bottom: 2rem;
+  }
+}
+
+label {
+  color: white;
+  display: block;
+  padding-bottom: 5px;
+  font-family: Helvetica;
+}
+
+input {
+  padding: 6px;
+  font-family: Helvetica;
+  color: #234564;
+}
+
+.vaznis {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 100px;
+      -webkit-appearance: none;
+      background-color: #fd00ff;
+    }
+  }
+}
+
+/* Patnode */
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg) translateX(-50%) translateY(-50%);
+  }
+}
+
+
+.patnode-message {
+  width: 100%;
+  height: 100vh;
+  color: hsl(50, 50%, 50%);
+  display: flex;
+  overflow: hidden;
+  font-family: 'Bangers', cursive;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: rotate(0) translateX(-50%) translateY(-50%);
+    transform-origin: 0 0;
+    width: 200%;
+    height: 200%;
+    background: repeating-conic-gradient(hsl(0, 50%, 40%), hsl(0, 50%, 50%) 1%);
+    content: '';
+    animation: rotation 20s infinite linear;
+  }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 10em;
+      letter-spacing: 15px;
+      text-transform: uppercase;
+      transform: rotate(-10deg);
+      text-shadow: 1px 1px hsl(50, 50%, 45%),
+                  2px 2px hsl(50, 50%, 40%),
+                  3px 3px hsl(50, 50%, 35%),
+                  4px 4px hsl(50, 50%, 34%),
+                  5px 5px hsl(50, 50%, 33%),
+                  6px 6px hsl(50, 50%, 32%),
+                  7px 7px hsl(50, 50%, 31%),
+                  8px 8px hsl(50, 50%, 30%),
+                  9px 9px hsl(50, 50%, 29%),
+                  10px 10px hsl(50, 50%, 28%),
+                  10px 10px 30px rgba(0,0,0,.7),
+    }
+}
+
+
+.cox {
+  .label {
+    display: block;
+    position: relative;
+    // text-transform: uppercase;
+    // font-weight: 700;
+    width: 100%;
+    // color: #727272;
+  }
+}
+
+.wilson {
+  #up {
+    margin-right: 20px;
+  }
+  #left {
+    margin-left: 20px;
+  }
+
+  #wrap {
+    position: relative;
+    top: 0;
+    bottom: 0;
+  }
+
+}
+
+.wellsandt {
+  .clear-input {
+    font-size: 8px;
+    margin-right: 8px;
+  }
+
+  .input-container {
+    // border: 1px solid grey;
+    // border-radius: 4px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .input-container input {
+    outline: none;
+    border: none;
+    width: 100%;
+    // font-size: 12px;
+    // margin: 8px 0;
+    padding: 8px 0;
+  }
+
+  /* here we are selecting the first .placeholder after the input when the placeholder is shown.  Crazy!! */
+  .input-container input:placeholder-shown + .placeholder {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 6px);
+    // font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 100ms;
+  }
+
+  /* we are selecting two different things here,
+
+   - .placeholder - when the input is being used (:focus)
+   - .placeholder - in its normal state
+
+  */
+  .input-container input:focus + .placeholder,
+  .input-container .placeholder {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 100ms;
+  }
+}
+
+.williams {
+  .button {
+    margin-left: 10px;
+    padding: 6px 12px;
+  }
+
+  .button-move {
+    transform: translateX(60px);
+  }
+}
+
+.kim {
+  select {
+    margin-bottom: 2rem;
+    padding: 6px;
+  }
+
+  .danger {
+    border-color: red;
+  }
+
+  .text-danger {
+    color: red;
+  }
+
+  .incrementer-input {
+    color: white;
+  }
+}
+
+.borst {
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px), translateX(0px);
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translate(0, -100px);
+      opacity: 0;
+    }
+  }
+
+  .testClass {
+    background-color: transparent;
+    animation: float 2s ease-out;
+    color: white;
+  }
+
+}
