@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const CanfieldInput = () => {
+const CanfieldInput = ({label, name}) => {
   const inputRef = useRef(null);
 
   const onClick = (e) => {
@@ -17,9 +17,9 @@ const CanfieldInput = () => {
   return (
     <div className='canfield'>
       <label htmlFor='input'>
-        Last Name
+        {label}
       </label>
-      <input ref={inputRef} autoComplete='off' id='input' defaultValue='Enter your last name' onChange={onChange} onClick={onClick} />
+      <input name={name} ref={inputRef} autoComplete='off' id='input' defaultValue='Enter your last name' onChange={onChange} onClick={onClick} />
     </div>
   );
 }

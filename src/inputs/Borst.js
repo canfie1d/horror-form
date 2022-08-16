@@ -14,7 +14,7 @@ function useDebounce(value, delay) {
   return debouncedValue;
 }
 
-const BorstInput = () => {
+const BorstInput = ({label, name}) => {
   const [test, setTest] = useState("");
   const splitString = useDebounce(test.split(""), 1500);
 
@@ -47,10 +47,11 @@ const BorstInput = () => {
               })}
             </div>
           )}
-          <label>First Name</label>
+          <label>{label}</label>
           <input
             value={splitString.length > 0 ? "" : test}
             onChange={(e) => setTest(e.target.value)}
+            name={name}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const VaznisInput = () => {
+const VaznisInput = ({label, name}) => {
   const ref = useRef(null);
 
   const onChange = (e) => {
@@ -14,9 +14,9 @@ const VaznisInput = () => {
   return (
     <div className='vaznis'>
       <label htmlFor='slider' ref={ref} id='sliderLabel'>
-        0
+        {label}
       </label>
-      <input id='slider' type='range' min='0' max='120' value='0' onChange={onChange} />
+      <input name={name} id='slider' type='range' min='0' max='120' value='0' onChange={onChange} />
     </div>
   );
 }

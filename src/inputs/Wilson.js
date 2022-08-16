@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const WilsonInput = () => {
+const WilsonInput = ({label, name}) => {
   const wrapRef = useRef(null);
   const inputRef = useRef(null);
   const labelRef = useRef(null);
@@ -42,10 +42,10 @@ const WilsonInput = () => {
   return (
     <div className='wilson' ref={wrapRef} id="wrap">
       <label ref={labelRef} id="label" htmlFor='input'>
-        Select age (note: value updates after selecting)
+        {label}
       </label>
       <button id="up" onClick={handleUp}>⬆️</button>
-      <input ref={inputRef} id='input' type="range" min="0" max="20" onChange={onChange} />
+      <input name={name} ref={inputRef} id='input' type="range" min="0" max="20" onChange={onChange} />
       <button id="down" onClick={handleDown}>⬇️</button>
     </div>
   )

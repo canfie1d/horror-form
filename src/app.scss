@@ -181,10 +181,13 @@ input {
   .button {
     margin-left: 10px;
     padding: 6px 12px;
+    &:focus {
+      outline: 2px solid red;
+    }
   }
 
   .button-move {
-    transform: translateX(60px);
+    transform: translateX(600px);
   }
 }
 

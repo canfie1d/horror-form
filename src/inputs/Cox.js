@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const CoxInput = () => {
+const CoxInput = ({label, name}) => {
   const ref = useRef(null);
 
   const onChange = (e) => {
@@ -18,9 +18,10 @@ const CoxInput = () => {
   return (
     <div className='cox'>
     <label className="label">
-      City
+      {label}
     </label>
     <input
+      name={name}
       ref={ref}
       type="text"
       id="password__input"

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const AlbrechtInput = () => {
+const AlbrechtInput = ({label, name}) => {
   const ref = useRef(null);
 
   const onChange = (e) => {
@@ -16,9 +16,9 @@ const AlbrechtInput = () => {
   return (
     <div className='albrecht'>
       <label htmlFor='input'>
-        Address
+        {label}
       </label>
-      <input ref={ref} id='input' onChange={onChange} />
+      <input name={name} ref={ref} id='input' onChange={onChange} />
     </div>
   )
 }

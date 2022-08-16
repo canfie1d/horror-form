@@ -19,37 +19,54 @@ function App() {
       <header className="header">
         Submit this form and win money
       </header>
-      <form>
+      {/* <!-- A little help for the Netlify post-processing bots --> */}
+      <form name="horror" netlify='true' netlify-honeypot="bot-field" hidden>
+        <input type="text" name="first-name" />
+        <input type="text" name="last-name" />
+        <input type="text" name="address" />
+        <input type="text" name="city" />
+        <input type="text" name="state" />
+        <input type="text" name="zip-code" />
+        <input type="text" name="password" />
+        <input type="text" name="password-confirm" />
+        <input type="text" name="submissions" />
+        <input type="text" name="age" />
+        <input type="text" name="email-address" />
+        <input type="text" name="phone-number" />
+        <input type='text' name='finish-form' />
+      </form>
+      <form name="horror" method="post">
+        <input type="hidden" name="form-name" value="horror" />
         <Flex>
           <Flex.Column>
-            <BorstInput />
+            <BorstInput label='First Name' name='first-name' />
           </Flex.Column>
           <Flex.Column>
-            <CanfieldInput />
+            <CanfieldInput label='Last Name' name='last-name' />
           </Flex.Column>
         </Flex>
         <Flex>
           <Flex.Column>
-            <AlbrechtInput />
+            <AlbrechtInput label='Address' name='address' />
           </Flex.Column>
           <Flex.Column>
-            <CoxInput />
+            <CoxInput label='City' name='city' />
           </Flex.Column>
         </Flex>
         <Flex>
           <Flex.Column>
-            <KentInput />
+            <KentInput label='State' name='state' />
           </Flex.Column>
           <Flex.Column>
-            <PatnodeInput />
+            <PatnodeInput label='Zip Code' name='zip-code' />
           </Flex.Column>
         </Flex>
-        <KimInput />
-        <VaznisInput />
-        <WilsonInput />
-        <WellsandtInput />
-        <KimInput2 />
-        <WilliamsInput />
+        <KimInput label1='Password' label2='Confirm Password' name1='password' name2='password-confirm' />
+        <VaznisInput label='Number of Submissions' name='submissions' />
+        <WilsonInput label="Select age (note: value updates after selecting)" name='age' />
+        <WellsandtInput label='Email Address' name='email-address' />
+        <KimInput2 label='Phone Number' name='phone-number' />
+        <WilliamsInput label='Quickly finish the form' name='finish-form' />
       </form>
     </div>
   );

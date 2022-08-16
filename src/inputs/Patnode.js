@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ReactModal from 'react-modal';
 
-const PatnodeInput = () => {
+const PatnodeInput = ({label, name}) => {
   const [showModal, setShowModal] = useState(false)
 
   const handleOpenModal = () => {
@@ -15,8 +15,8 @@ const PatnodeInput = () => {
   return(
     <div>
       <div>
-        <label htmlFor="location">Zip Code</label>
-        <input onChange={handleOpenModal} type="text" id="location" name="location"/>
+        <label htmlFor="location">{label}</label>
+        <input onChange={handleOpenModal} type="text" id="location" name={name} />
       </div>
       <ReactModal
         isOpen={showModal}
@@ -24,7 +24,7 @@ const PatnodeInput = () => {
       >
         <div className="patnode-message">
           <h1>
-          gReAt JoB yOu MaDe A cHaNgE :D
+            gReAt JoB yOu MaDe A cHaNgE :D
           </h1>
         </div>
         <button onClick={handleCloseModal}>Close Modal</button>

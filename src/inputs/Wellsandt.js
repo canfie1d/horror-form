@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const Wellsandt = () => {
+const Wellsandt = ({label, name}) => {
   const labelRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -34,8 +34,8 @@ const Wellsandt = () => {
   return (
     <div className='wellsandt'>
       <div className="input-container">
-        <input ref={inputRef} id="input" type="text" placeholder=" " onKeyDown={onKeyDown} />
-        <label ref={labelRef} id="label" className="placeholder">Email Address</label>
+        <input name={name} ref={inputRef} id="input" type="text" placeholder=" " onKeyDown={onKeyDown} />
+        <label ref={labelRef} id="label" className="placeholder">{label}</label>
       </div>
     </div>
   )
