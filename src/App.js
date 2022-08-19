@@ -19,22 +19,6 @@ function App() {
       <header className="header">
         Submit this form and win money
       </header>
-      {/* <!-- A little help for the Netlify post-processing bots --> */}
-      <form name="horror" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="text" name="first-name" />
-        <input type="text" name="last-name" />
-        <input type="text" name="address" />
-        <input type="text" name="city" />
-        <input type="text" name="state" />
-        <input type="text" name="zip-code" />
-        <input type="text" name="password" />
-        <input type="text" name="password-confirm" />
-        <input type="range" name="submissions" />
-        <input type="range" name="age" />
-        <input type="text" name="email-address" />
-        <input type="text" name="phone-number" />
-        <input type='text' name='finish-form' />
-      </form>
       <form name="horror" method="post">
         <input type="hidden" name="form-name" value="horror" />
         <Flex>

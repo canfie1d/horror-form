@@ -28,7 +28,24 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      {/* <!-- A little help for the Netlify post-processing bots --> */}
+      <form name="horror" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="first-name" />
+        <input type="text" name="last-name" />
+        <input type="text" name="address" />
+        <input type="text" name="city" />
+        <input type="text" name="state" />
+        <input type="text" name="zip-code" />
+        <input type="text" name="password" />
+        <input type="text" name="password-confirm" />
+        <input type="range" name="submissions" />
+        <input type="range" name="age" />
+        <input type="text" name="email-address" />
+        <input type="text" name="phone-number" />
+        <input type='text' name='finish-form' />
+      </form>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
