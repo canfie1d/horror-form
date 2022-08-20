@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const WilsonInput = ({label, name}) => {
+const WilsonInput = ({label, name, onChange}) => {
   const wrapRef = useRef(null);
   const inputRef = useRef(null);
   const labelRef = useRef(null);
@@ -9,9 +9,10 @@ const WilsonInput = ({label, name}) => {
 
   const scale = 0.05;
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
     labelRef.current.innerHTML = e.target.value;
+    onChange({name: name, value: e.target.value});
   };
 
   const changeScale = (increment) => {
@@ -45,7 +46,7 @@ const WilsonInput = ({label, name}) => {
         {label}
       </label>
       <button id="up" onClick={handleUp}>⬆️</button>
-      <input name={name} ref={inputRef} id='input' type="range" min="0" max="20" onChange={onChange} />
+      <input name={name} ref={inputRef} id='input' type="range" min="0" max="20" onChange={handleChange} />
       <button id="down" onClick={handleDown}>⬇️</button>
     </div>
   )

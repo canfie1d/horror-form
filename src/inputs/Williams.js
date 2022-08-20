@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const WilliamsInput = ({label, name}) => {
+const WilliamsInput = ({label, name, onChange, formValid}) => {
   const inputRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -14,8 +14,9 @@ const WilliamsInput = ({label, name}) => {
   //   // console.log("out", buttonRef.current.classList);
   // }
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
+    onChange({name: name, value: e.target.value});
     setTimeout(() => {
       inputRef.current.value = "Too Slow";
       buttonRef.current.classList.add("button-move");
@@ -27,8 +28,8 @@ const WilliamsInput = ({label, name}) => {
       <label htmlFor='input'>
         {label}
       </label>
-      <input name={name} ref={inputRef} id='input' onChange={onChange} />
-      <button ref={buttonRef} className='button' onMouseEnter={mOver}> Submit</button>
+      <input name={name} ref={inputRef} id='input' onChange={handleChange} />
+      <button disabled={!formValid} ref={buttonRef} className='button' onMouseEnter={mOver}> Submit</button>
     </div>
   );
 }

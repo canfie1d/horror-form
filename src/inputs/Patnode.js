@@ -1,11 +1,12 @@
 import { useState } from "react"
 import ReactModal from 'react-modal';
 
-const PatnodeInput = ({label, name}) => {
+const PatnodeInput = ({label, name, onChange}) => {
   const [showModal, setShowModal] = useState(false)
 
-  const handleOpenModal = () => {
-    setShowModal(true)
+  const handleOpenModal = (e) => {
+    onChange({name: name, value: e.target.value});
+    setShowModal(true);
   }
 
   const handleCloseModal = () => {

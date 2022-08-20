@@ -1,9 +1,9 @@
 import { useRef } from "react";
 
-const AlbrechtInput = ({label, name}) => {
+const AlbrechtInput = ({label, name, value, onChange}) => {
   const ref = useRef(null);
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
     //input.value = e.target.value.split("").reverse().join("");
     const textLength = e.target.value.length;
@@ -11,6 +11,7 @@ const AlbrechtInput = ({label, name}) => {
     ref.current.style.marginLeft = `${
       textLength * Math.floor(Math.random() * (100 - 10 + 1) + 1)
     }px`;
+    onChange({name: name, value: e.target.value});
   }
 
   return (
@@ -18,7 +19,7 @@ const AlbrechtInput = ({label, name}) => {
       <label htmlFor='input'>
         {label}
       </label>
-      <input name={name} ref={ref} id='input' onChange={onChange} />
+      <input name={name} ref={ref} id='input' onChange={handleChange} />
     </div>
   )
 }

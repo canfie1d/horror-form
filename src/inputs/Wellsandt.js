@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const Wellsandt = ({label, name}) => {
+const Wellsandt = ({label, name, onChange}) => {
   const labelRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -29,6 +29,7 @@ const Wellsandt = ({label, name}) => {
       }
 
       inputRef.current.value = defaultLabel;
+      onChange({name: name, value: labelRef.current.innerText});
   }
 
   return (
