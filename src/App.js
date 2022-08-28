@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        Submit this form and win money
+        Submit this form and win money*
         {error && dirty && (
           <p className='text-danger' style={{fontSize: '1.5rem', textAlign: 'center'}}>{error}</p>
         )}
@@ -92,6 +92,7 @@ function App() {
         <WellsandtInput label='Email Address' name='email-address' onChange={handleChange} />
         <KimInput2 label='Phone Number' name='phone-number' onChange={handleChange} />
         <WilliamsInput label='Quickly finish the form' name='finish-form' onChange={handleChange} formValid={!error && dirty} />
+        <p>* not real money</p>
       </form>
     </div>
   );

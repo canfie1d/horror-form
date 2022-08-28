@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import style from './flex.module.scss';
 import FlexColumn from './FlexColumn';
+import style from './flex.module.scss';
 
 const Flex = ({
   wrap = false,

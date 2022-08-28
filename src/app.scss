@@ -1,3 +1,7 @@
+:root {
+  --unit: 1rem;
+}
+
 .header {
   min-height: 100px;
   display: flex;
@@ -29,6 +33,7 @@ input {
   padding: 6px;
   font-family: Helvetica;
   color: #234564;
+  width: calc(100% - var(--unit));
 }
 
 .vaznis {
