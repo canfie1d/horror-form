@@ -184,8 +184,9 @@ input {
 
 .williams {
   .button {
-    margin-left: 10px;
+    margin-top: 1rem;
     padding: 6px 12px;
+
     &:focus {
       outline: 2px solid red;
     }
