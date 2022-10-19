@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import styles from './flex.module.scss';
 
 const FlexColumn = ({
   grow = 1,
@@ -10,7 +11,7 @@ const FlexColumn = ({
   children,
 }) => (
   <div
-    className={classNames(['flex__column', className])}
+    className={classNames([styles['flex__column'], className])}
     style={{
       flex: `${grow} ${shrink} ${basis}`,
       alignSelf: alignSelf, // eslint-disable-line

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Flex from "../Flex";
 
-const KimInput2 = ({label, name}) => {
+const KimInput2 = ({label, name, onChange}) => {
   const [phoneNumber, setPhoneNumber] = useState('0000000000');
   // let areaCode = 0;
 
@@ -17,6 +17,9 @@ const KimInput2 = ({label, name}) => {
     const newNumber = (parseInt(phoneNumber) + 10).toString().padStart(10, '0');
     setPhoneNumber(newNumber)
     document.getElementById("input-phone-number").innerText = newNumber;
+    e.target.name = name;
+    e.target.value = newNumber;
+    onChange({name: name, value: e.target.value});
   }
 
   return (

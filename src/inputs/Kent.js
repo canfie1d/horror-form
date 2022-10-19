@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const KentInput = ({label, name}) => {
+const KentInput = ({label, name, onChange}) => {
   const [isFieldLocked, setIsFieldLocked] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const KentInput = ({label, name}) => {
       <label htmlFor='input'>
         {label}
       </label>
-      <input name={name} id='input' readOnly={isFieldLocked} />
+      <input name={name} id='input' readOnly={isFieldLocked} onChange={(e)=>onChange({name: name, value: e.target.value})} />
     </div>
   )
 }

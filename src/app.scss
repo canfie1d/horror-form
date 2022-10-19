@@ -1,3 +1,7 @@
+:root {
+  --unit: 1rem;
+}
+
 .header {
   min-height: 100px;
   display: flex;
@@ -6,7 +10,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin-bottom: 4rem;
+  margin: 2rem 0 3rem;
 }
 
 form {
@@ -29,6 +33,7 @@ input {
   padding: 6px;
   font-family: Helvetica;
   color: #234564;
+  width: calc(100% - var(--unit));
 }
 
 .vaznis {
@@ -179,8 +184,9 @@ input {
 
 .williams {
   .button {
-    margin-left: 10px;
+    margin-top: 1rem;
     padding: 6px 12px;
+
     &:focus {
       outline: 2px solid red;
     }
@@ -191,6 +197,10 @@ input {
   }
 }
 
+.text-danger {
+  color: red;
+}
+
 .kim {
   select {
     margin-bottom: 2rem;
@@ -199,10 +209,6 @@ input {
 
   .danger {
     border-color: red;
-  }
-
-  .text-danger {
-    color: red;
   }
 
   .incrementer-input {

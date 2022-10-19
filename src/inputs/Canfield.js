@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const CanfieldInput = ({label, name}) => {
+const CanfieldInput = ({label, name, value, onChange}) => {
   const inputRef = useRef(null);
 
   const onClick = (e) => {
@@ -9,8 +9,9 @@ const CanfieldInput = ({label, name}) => {
     inputRef.current.setSelectionRange(0, 0);
   }
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     e.preventDefault();
+    onChange({name: name, value: e.target.value});
     inputRef.current.blur();
   }
 
@@ -19,7 +20,7 @@ const CanfieldInput = ({label, name}) => {
       <label htmlFor='input'>
         {label}
       </label>
-      <input name={name} ref={inputRef} autoComplete='off' id='input' defaultValue='Enter your last name' onChange={onChange} onClick={onClick} />
+      <input name={name} ref={inputRef} autoComplete='off' id='input' defaultValue='Enter your last name' onChange={handleChange} onClick={onClick} />
     </div>
   );
 }

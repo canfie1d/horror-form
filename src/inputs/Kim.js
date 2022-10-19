@@ -1,6 +1,6 @@
 import Flex from "../Flex";
 
-const KimInput = ({label1, label2, name1, name2}) => {
+const KimInput = ({label1, label2, name1, name2, onChange}) => {
   return (
     <div className='kim'>
       <section className='section'>
@@ -319,13 +319,13 @@ const KimInput = ({label1, label2, name1, name2}) => {
           <Flex.Column>
             <div className='form'>
               <label htmlFor='input'>{label1}</label>
-              <input name={name1} className='danger' id='input' />
+              <input name={name1} className='danger' id='input' onChange={(e)=>onChange({name: name1, value: e.target.value})} />
             </div>
           </Flex.Column>
           <Flex.Column>
             <div className='form'>
               <label htmlFor='input'>{label2}</label>
-              <input name={name2} id='input' />
+              <input name={name2} id='input' onChange={(e) => onChange({name: name2, value: e.target.value})} />
             </div>
           </Flex.Column>
         </Flex>
