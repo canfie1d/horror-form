@@ -1,6 +1,6 @@
 import Flex from "../Flex";
 
-const KimInput = ({label1, label2, name1, name2, onChange}) => {
+const KimInput = ({label1, label2, name1, name2, onChange, value, value2}) => {
   return (
     <div className='kim'>
       <section className='section'>
@@ -329,7 +329,10 @@ const KimInput = ({label1, label2, name1, name2, onChange}) => {
             </div>
           </Flex.Column>
         </Flex>
-          <p className='text-danger'>This password is already taken by <strong>robinjdkim</strong>. Please use another!</p>
+          <p className='text-danger'>{value !== '' ? value : 'This password'} is already taken. Please use another!</p>
+          {value !== value2 && (
+            <p className='text-danger'>Passwords must match!</p>
+          )}
       </section>
     </div>
   )

@@ -42,7 +42,7 @@ const BorstInput = ({label, name, onChange}) => {
               }}
             >
               {splitString?.map((char, index) => {
-                return <div id={char + index}>{char}</div>;
+                return <div key={index} id={char + index}>{char}</div>;
               })}
             </div>
           )}

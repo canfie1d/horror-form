@@ -8,23 +8,26 @@ const Wellsandt = ({label, name, onChange}) => {
 
   useEffect(() => {
     if (labelRef.current) {
+
       setDefaultLabel(labelRef.current.innerText)
     }
   }, [])
 
   const onKeyDown = (e) => {
       e.preventDefault();
-
-      if (e.nativeEvent.target.code === "Backspace") {
-        const innerText = labelRef.current.innerText;
-        labelRef.current.innerText = innerText.slice(0, -1);
-      } else if (e.code === "Space") {
-        labelRef.current.innerText = labelRef.current.innerText + "&nbsp;";
+      if (e.key === "Tab") {
+        inputRef.current.blur();
+        return;
+      }
+      if (e.key === "Backspace") {
+        labelRef.current.innerText = labelRef.current.innerText.substring(0, labelRef.current.innerText.length -1);
       } else {
         if (labelRef.current.innerText === defaultLabel) {
-          labelRef.current.innerText = String.fromCharCode(e.keyCode);
+          labelRef.current.innerText = String.fromCharCode(e.key);
         } else {
-          labelRef.current.innerText = labelRef.current.innerText + String.fromCharCode(e.keyCode);
+          const newKey = e.shiftKey ? e.key.toUpperCase() : e.key;
+
+          labelRef.current.innerText = labelRef.current.innerText + newKey.replace('SHIFT', '');
         }
       }
 

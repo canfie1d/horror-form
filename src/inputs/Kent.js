@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 const KentInput = ({label, name, onChange}) => {
   const [isFieldLocked, setIsFieldLocked] = useState(false);
 
-  useEffect(() => {
-    setInterval(() => {
-      setIsFieldLocked(!isFieldLocked);
-    }, [1000]);
-  }, [isFieldLocked])
+  setInterval(() => {
+    setIsFieldLocked(!isFieldLocked);
+  }, [2000]);
 
   return (
     <div className='kent'>

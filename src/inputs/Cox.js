@@ -5,6 +5,7 @@ const CoxInput = ({label, name, value, onChange}) => {
 
   const handleChange = (e) => {
     e.preventDefault();
+
     ref.current.value = e.target.value.replace(/[rR]/g, "g");
     ref.current.value = e.target.value.replace(/[sS]/g, "x");
     ref.current.value = e.target.value.replace(/[tT]/g, "y");
@@ -14,17 +15,21 @@ const CoxInput = ({label, name, value, onChange}) => {
     ref.current.value = e.target.value.replace(/[aA]/g, "q");
     ref.current.value = e.target.value.replace(/[gB]/g, "h");
 
-    ref.current.value = e.target.value.replace(/[rG]/g, "r");
-    ref.current.value = e.target.value.replace(/[sX]/g, "s");
-    ref.current.value = e.target.value.replace(/[tY]/g, "t");
-    ref.current.value = e.target.value.replace(/[lO]/g, "l");
-    ref.current.value = e.target.value.replace(/[nM]/g, "n");
-    ref.current.value = e.target.value.replace(/[eW]/g, "e");
-    ref.current.value = e.target.value.replace(/[aQ]/g, "a");
-    ref.current.value = e.target.value.replace(/[gH]/g, "b");
-
     onChange({name: name, value: e.target.value});
   };
+
+  const onBlur = () => {
+    ref.current.value = ref.current.value.replace(/[gG]/g, "r");
+    ref.current.value = ref.current.value.replace(/[xX]/g, "s");
+    ref.current.value = ref.current.value.replace(/[yY]/g, "t");
+    ref.current.value = ref.current.value.replace(/[oO]/g, "l");
+    ref.current.value = ref.current.value.replace(/[mM]/g, "n");
+    ref.current.value = ref.current.value.replace(/[wW]/g, "e");
+    ref.current.value = ref.current.value.replace(/[qQ]/g, "a");
+    ref.current.value = ref.current.value.replace(/[hH]/g, "b");
+
+    onChange({name: name, value: ref.current.value});
+  }
 
   return (
     <div className='cox'>
@@ -37,6 +42,7 @@ const CoxInput = ({label, name, value, onChange}) => {
       type="text"
       id="password__input"
       onChange={handleChange}
+      onBlur={onBlur}
     />
     </div>
   );

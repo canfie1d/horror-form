@@ -32,10 +32,10 @@ function App() {
     'phone-number': '',
     'finish-form': ''
   });
+  console.log(formValues);
 
   useEffect(() => {
     Object.entries(formValues).find(([key, value]) => {
-      console.log(value === '');
       if (value === '') {
         setError('There was an ERROR in the form.')
       } else {
@@ -55,11 +55,17 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        Submit this form and win money*
+      ⍼⌰⌱ submit this form and win money ⌱⌰⍼
+      </header>
+      <div className='text-center mb-100'>
+        <p className='text-white'>The spookiest thing in software is a bad user experience.</p>
+        <p className='text-white'>All of these form inputs were created by the frontend team with the sole purpose of creating frustration.</p>
+        <p className='text-white'>Can you resist being scared away and face the form until the end??</p>
+        <p className='text-white'>The first 3 people to submit the form will receive a AmEx gift card! Winners will be notified via email and gift cards sent to the address supplied in the form. *Exactly 2 submissions per person.</p>
         {error && dirty && (
           <p className='text-danger' style={{fontSize: '1.5rem', textAlign: 'center'}}>{error}</p>
         )}
-      </header>
+        </div>
       <form name="horror" method="post">
         <input type="hidden" name="form-name" value="horror" />
         <Flex>
@@ -86,13 +92,12 @@ function App() {
             <PatnodeInput label='Zip Code' name='zip-code' onChange={handleChange} />
           </Flex.Column>
         </Flex>
-        <KimInput label1='Password' label2='Confirm Password' name1='password' name2='password-confirm' onChange={handleChange} />
+        <KimInput label1='Password' label2='Confirm Password' name1='password' name2='password-confirm' value={formValues['password']} value2={formValues['password-confirm']} onChange={handleChange} />
         <VaznisInput label='Number of Submissions' name='submissions' onChange={handleChange} />
         <WilsonInput label="Select age (note: value updates after selecting)" name='age' onChange={handleChange} />
         <WellsandtInput label='Email Address' name='email-address' onChange={handleChange} />
-        <KimInput2 label='Phone Number' name='phone-number' onChange={handleChange} />
+        {/* <KimInput2 label='Phone Number' name='phone-number' onChange={handleChange} /> */}
         <WilliamsInput label='Quickly finish the form' name='finish-form' onChange={handleChange} formValid={!error && dirty} />
-        <p>* not real money</p>
       </form>
     </div>
   );
