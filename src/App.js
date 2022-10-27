@@ -9,7 +9,7 @@ import WellsandtInput from './inputs/Wellsandt';
 import KentInput from './inputs/Kent';
 import CanfieldInput from './inputs/Canfield';
 import KimInput from './inputs/Kim';
-import KimInput2 from './inputs/Kim2';
+// import KimInput2 from './inputs/Kim2';
 import WilliamsInput from './inputs/Williams';
 import BorstInput from './inputs/Borst';
 import './app.scss';
